@@ -1,39 +1,52 @@
 import random
 items = ["rock", "paper", "scissors"]
+p1Score = 0;
+compScore = 0;
+winning_score = 3
 
-print("...rock...\n...paper...\n...scissors...")
+while (p1Score <= winning_score and compScore <= winning_score):
+    
+    print(f"Player Score: {p1Score} Computer Score {compScore}")
+    print("...rock...\n...paper...\n...scissors...")
 
-p1Choice = input("Enter Player 1's choice: ")
-# p2Choice = input("Enter Player 2's choice: ")
-compChoice = random.choice(items)
-rand_num = random.randint(0,2)
+    p1Choice = input("Enter Player 1's choice: ")
+    # p2Choice = input("Enter Player 2's choice: ")
+    compChoice = random.choice(items)
+    rand_num = random.randint(0,2)
 
-if rand_num == 0:
-    comp = "rock"
-elif rand_num == 1:
-    comp = "paper"
-else:
-    comp = "scissors"
+    if rand_num == 0:
+        comp = "rock"
+    elif rand_num == 1:
+        comp = "paper"
+    else:
+        comp = "scissors"
 
-print("The computer played: " + comp)
+    print("The computer played: " + comp)
 
-if p1Choice == comp: 
-    print("We hava a tie")
-elif p1Choice == "rock":
-    if comp == "paper":
-        print("computer wins")
-    elif comp == "scissors":
-        print("player1 wins")
-elif p1Choice == "paper":
-    if comp == "rock":
-        print("player1 wins")
-    elif comp == "scissors":
-        print("computer wins")
-elif p1Choice == "scissors":
-    if comp == "paper":
-        print("player1 wins")
-    elif comp == "rock":
-        print("computer wins")
+    if p1Choice == comp: 
+        print("We hava a tie")
+    elif p1Choice == "rock":
+        if comp == "paper":
+            print("computer wins")
+            compScore += 1
+        elif comp == "scissors":
+            print("player1 wins")
+            p1Score += 1
+    elif p1Choice == "paper":
+        if comp == "rock":
+            print("player1 wins")
+            p1Score += 1
+        elif comp == "scissors":
+            print("computer wins")
+            compScore += 1
+    elif p1Choice == "scissors":
+        if comp == "paper":
+            print("player1 wins")
+            p1Score += 1
+        elif comp == "rock":
+            print("computer wins")
+            compScore += 1
+    print(f"Final Scores...Player Score: {p1Score} Computer Score {compScore}")
 
 # if p1Choice == p2Choice: 
 #     print("We hava a tie")
