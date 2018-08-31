@@ -61,3 +61,7 @@ print(answer)
 word = "amazing"
 answer = [char for char in word if char not in "aeiou"]
 print(answer)
+
+#nested list comprehension
+board = [["X" if num % 2 != 0 else "O" for num in range(1,4)] for val in range(1,4)]
+print(board)
