@@ -51,3 +51,13 @@ print(res)
 #create a list with each word reversed and in lower case
 answer = [name.lower()[::-1] for name in person]
 print(answer)
+
+#create a list with all numbers from 0 - 100 that are divisible by 12
+number = range(1, 101)
+answer = [num for num in number if num % 12 == 0]
+print(answer)
+
+#create a list containing all consonants
+word = "amazing"
+answer = [char for char in word if char not in "aeiou"]
+print(answer)
